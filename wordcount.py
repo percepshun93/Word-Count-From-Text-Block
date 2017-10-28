@@ -1,10 +1,10 @@
 #open the file in read mode
-file = open('sample.txt','r')
+file = open('sample.txt','r') #change the sample.txt to any file name you want. make sure that the txt file is in the same directory.
 
 for line in file:
-	line = line.replace(',','')
-	line = line.replace('.','')
-	line = line.rstrip()
+	line = line.replace(',','') 	#replace all commas
+	line = line.replace('.','')	#replace all periods
+	line = line.rstrip()		
 	words_list = line.split()
 	#print(words_list)
 	#print(line)
@@ -15,12 +15,11 @@ word_count = {}
 
 for word in words_list:
 	word_count[word] = word_count.get(word,0) + 1 
-	#If the key 'word' is not there then the get returns 0
-	#The first time a word is encountered in a text it's value in the dictionary 
-	#should be set to 1 which is done by the +1
+	# If the key 'word' is not there then the get returns 0
+	# The first time a word is encountered in a text it's value in the dictionary should be set to 1 which is done by the +1
 	
 for key,value in word_count.items():
-	print (key,value)
+	print ('Word=',key,'is Repeated',value,'times')
 
 	
 #find the most frequent word by finding the value of the highest key-value pair
@@ -50,4 +49,4 @@ for word in words_list:
 
 #print(words_list)		
 #print(newlist)	
-print("First word to get repeated after 'the' is:",newlist[1])
+print("\nFirst word to get repeated after 'the' is:",newlist[1],'\n')
